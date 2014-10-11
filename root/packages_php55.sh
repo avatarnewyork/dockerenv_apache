@@ -17,6 +17,7 @@ yum -y install \
     php55w-devel \
     php55w-gd \
     php55w-pecl-memcache \
+    php55w-pecl-imagick \
     php55w-pspell \
     php55w-snmp \
     php55w-xmlrpc \
