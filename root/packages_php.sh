@@ -25,9 +25,11 @@ yum --enablerepo=remi -y install \
 # ImageMagick
 yum -y install \
     gcc \
+    make \
     ImageMagick \
     ImageMagick-devel
 
 pecl install imagick
 
 echo "extension=imagick.so" > /etc/php.d/imagick.ini
+
