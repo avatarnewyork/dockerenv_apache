@@ -1,6 +1,6 @@
 #/bin/bash
 
-yum --enablerepo=remi -y install \
+yum -y install \
     php \
     php-common \
     php-cli \
@@ -28,6 +28,6 @@ yum -y install \
     ImageMagick \
     ImageMagick-devel
 
-pecl install imagick
+/usr/bin/pecl install imagick
 
 echo "extension=imagick.so" > /etc/php.d/imagick.ini
