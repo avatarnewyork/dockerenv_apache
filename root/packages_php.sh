@@ -1,14 +1,14 @@
 #/bin/bash
 
-yum --enablerepo=remi -y install \
+yum --exclude=php53\* -y install \
     php \
-    php-common \
     php-cli \
     php-ldap \
     php-mbstring \
     php-pdo \
     php-soap \
     php-bcmath \
+    php-common \
     php-intl \
     php-pear \
     php-pecl-apc \
@@ -29,7 +29,7 @@ yum -y install \
     ImageMagick \
     ImageMagick-devel
 
-pecl install imagick
+/usr/bin/pecl install imagick
 
 echo "extension=imagick.so" > /etc/php.d/imagick.ini
 

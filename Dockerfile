@@ -3,7 +3,6 @@ FROM centos:centos5
 
 # using epel
 RUN rpm -Uvh http://dl.fedoraproject.org/pub/epel/5/x86_64/epel-release-5-4.noarch.rpm
-RUN rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-5.rpm
 Run yum -y update
 
 ADD ./root/packages.sh /packages.sh
