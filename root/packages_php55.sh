@@ -21,4 +21,5 @@ yum -y install \
     php55w-pspell \
     php55w-snmp \
     php55w-xmlrpc \
-    php55w-xml       
+    php55w-xml \
+    php55w-process
