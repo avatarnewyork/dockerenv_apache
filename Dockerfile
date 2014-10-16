@@ -24,6 +24,9 @@ ADD ./root/etc/php.ini /etc/php.ini
 
 RUN chmod 755 /*.sh
 
+# Add php user
+RUN useradd -g users php
+
 EXPOSE 80
 
 CMD /usr/sbin/httpd -DFOREGROUND
