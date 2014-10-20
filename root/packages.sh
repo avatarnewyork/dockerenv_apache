@@ -8,3 +8,9 @@ passwd \
 pwgen \
 httpd 
 
+# drush requirements
+yum -y install \
+    wget \
+    which \
+    tar 
+

@@ -40,3 +40,7 @@ yum -y install \
 yes '' | pecl install -f solr
 
 echo "extension=solr.so" > /etc/php.d/solr.ini
+
+# Drush
+pear channel-discover pear.drush.org
+pear install drush/drush
