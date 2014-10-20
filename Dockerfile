@@ -31,4 +31,4 @@ RUN usermod -g users apache
 
 EXPOSE 80
 
-CMD /usr/sbin/httpd -DFOREGROUND
+CMD docker-umask-wrapper.sh /usr/sbin/httpd -DFOREGROUND
