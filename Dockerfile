@@ -23,7 +23,6 @@ ADD ./root/etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd.conf
 ADD ./root/etc/php.ini /etc/php.ini
 
 # set default umask to 002
-RUN echo "umask 002"$'\n' >> /etc/sysconfig/httpd
 ADD ./root/etc/profile /etc/profile
 ADD ./root/docker-umask-wrapper.sh /bin/docker-umask-wrapper.sh
 
