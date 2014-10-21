@@ -26,7 +26,6 @@ ADD ./root/etc/profile /etc/profile
 ADD ./root/docker-umask-wrapper.sh /bin/docker-umask-wrapper.sh
 RUN chmod u+x /bin/docker-umask-wrapper.sh
 
-
 RUN chmod 755 /*.sh
 RUN usermod -g users apache
 
