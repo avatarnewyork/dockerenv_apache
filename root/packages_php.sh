@@ -44,3 +44,4 @@ echo "extension=solr.so" > /etc/php.d/solr.ini
 # Drush
 pear channel-discover pear.drush.org
 pear install drush/drush
+pear install --alldeps Console_Table
