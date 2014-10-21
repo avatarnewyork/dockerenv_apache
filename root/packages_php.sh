@@ -42,3 +42,9 @@ yes '' | pecl install -f solr
 
 echo "extension=solr.so" > /etc/php.d/solr.ini
 
+<<<<<<< HEAD
+=======
+# Drush
+pear channel-discover pear.drush.org
+pear install drush/drush
+>>>>>>> 9ea7520... Installing drush and required libs.  fixes #4
