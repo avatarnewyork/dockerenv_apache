@@ -20,7 +20,11 @@ RUN echo "NETWORKING=yes" > /etc/sysconfig/network
 ADD ./root/etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd.conf
 ADD ./root/etc/php.ini /etc/php.ini
 
+# set default umask to 002
+Add ./root/etc/profile /etc/profile
+
 RUN chmod 755 /*.sh
+RUN usermod -g users apache
 
 EXPOSE 80
 
