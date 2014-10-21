@@ -21,6 +21,7 @@ RUN echo "NETWORKING=yes" > /etc/sysconfig/network
 # Add Configs
 ADD ./root/etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd.conf
 ADD ./root/etc/php.ini /etc/php.ini
+ADD ./root/etc/httpd/robots.txt /etc/httpd/robots.txt
 
 # set default umask to 002
 ADD ./root/etc/profile /etc/profile
