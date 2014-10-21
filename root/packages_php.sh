@@ -33,3 +33,12 @@ yum -y install \
 
 echo "extension=imagick.so" > /etc/php.d/imagick.ini
 
+# Solr
+yum -y install \
+    curl-devel \
+    libxml2-devel
+
+yes '' | pecl install -f solr
+
+echo "extension=solr.so" > /etc/php.d/solr.ini
+
