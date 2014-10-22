@@ -25,6 +25,7 @@ ADD ./root/etc/httpd/robots.txt /etc/httpd/robots.txt
 Add ./root/ZendOptimizer.so /usr/lib64/php/modules/ZendOptimizer.so
 
 RUN chmod 755 /*.sh
+RUN chmod 777 /var/lib/php/session
 
 EXPOSE 80
 
