@@ -16,6 +16,11 @@ ADD ./root/packages_php55.sh /packages_php55.sh
 RUN chmod 755 /packages_php55.sh
 RUN /packages_php55.sh
 
+# install nodejs packages
+ADD ./root/packages_nodejs.sh /nodejs.sh
+RUN chmod 755 /nodejs.sh
+RUN /nodejs.sh
+
 RUN echo "NETWORKING=yes" > /etc/sysconfig/network
 
 # Add Configs
