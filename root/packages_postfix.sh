@@ -1,6 +1,6 @@
 #/bin/bash
 
-yum -y install --skip-broken \
+yum -y install --disablerepo=webtatic \
     postfix \
     cyrus-sasl \
     cyrus-sasl-plain \
