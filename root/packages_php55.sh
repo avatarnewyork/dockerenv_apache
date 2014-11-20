@@ -22,4 +22,10 @@ yum -y install \
     php55w-snmp \
     php55w-xmlrpc \
     php55w-xml \
-    php55w-process
+    php55w-process \
+    php55w-pecl-xdebug
+
+# Drush
+pear channel-discover pear.drush.org
+pear install drush/drush
+pear install --alldeps Console_Table

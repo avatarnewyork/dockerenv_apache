@@ -16,11 +16,17 @@ ADD ./root/packages_php55.sh /packages_php55.sh
 RUN chmod 755 /packages_php55.sh
 RUN /packages_php55.sh
 
+# install nodejs packages
+ADD ./root/packages_nodejs.sh /nodejs.sh
+RUN chmod 755 /nodejs.sh
+RUN /nodejs.sh
+
 RUN echo "NETWORKING=yes" > /etc/sysconfig/network
 
 # Add Configs
 ADD ./root/etc/httpd/conf/httpd.conf /etc/httpd/conf/httpd.conf
 ADD ./root/etc/php.ini /etc/php.ini
+ADD ./root/etc/httpd/robots.txt /etc/httpd/robots.txt
 
 # set default umask to 002
 ADD ./root/etc/profile /etc/profile
@@ -30,6 +36,7 @@ RUN chmod u+x /bin/docker-umask-wrapper.sh
 
 
 RUN chmod 755 /*.sh
+RUN chmod 777 /var/lib/php/session
 
 # Add php user
 RUN usermod -g users apache
