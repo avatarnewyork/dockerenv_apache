@@ -49,4 +49,4 @@ RUN usermod -g users apache
 
 EXPOSE 80 25
 
-CMD postconf -e "smtp_sasl_password_maps = static:$POSTFIX_USER:$POSTFIX_PWD"; postconf -e "myhostname = $POSTFIX_HOSTNAME"; service postfix start; /bin/docker-umask-wrapper.sh /usr/sbin/httpd -DFOREGROUND"
+CMD postconf -e "smtp_sasl_password_maps = static:$POSTFIX_USER:$POSTFIX_PWD"; postconf -e "myhostname = $POSTFIX_HOSTNAME"; service postfix start; /bin/docker-umask-wrapper.sh /usr/sbin/httpd -DFOREGROUND
