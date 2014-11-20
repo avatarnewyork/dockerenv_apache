@@ -668,7 +668,9 @@ readme_directory = /usr/share/doc/postfix-2.3.3/README_FILES
 
 smtp_sasl_security_options = noanonymous
 
+relayhost = [smtp.mailgun.org]:587
 
+smtp_sasl_auth_enable = yes
 
 #smtp_sasl_auth_enable = yes
 #smtp_sasl_password_maps = static:<%= relayuser %>:<%= relaypwd %>
