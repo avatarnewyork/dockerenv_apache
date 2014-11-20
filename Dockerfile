@@ -19,9 +19,6 @@ RUN /packages_postfix.sh
 # postfix config
 ADD ./root/etc/postfix/main.cf /etc/postfix/main.cf 
 ADD ./root/etc/postfix/header_checks /etc/postfix/header_checks
-RUN postconf -e 'relayhost = [smtp.mailgun.org]:587'
-RUN postconf -e 'smtp_sasl_auth_enable = yes'
-
 
 # install php55
 ADD ./root/packages_php55.sh /packages_php55.sh
