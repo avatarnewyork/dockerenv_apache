@@ -11,6 +11,18 @@ ADD ./root/packages.sh /packages.sh
 RUN chmod 755 /packages.sh
 RUN /packages.sh
 
+# install postfix
+ADD ./root/packages_postfix.sh /packages_postfix.sh
+RUN chmod 755 /packages_postfix.sh
+RUN /packages_postfix.sh
+
+# postfix config
+ADD ./root/etc/postfix/main.cf /etc/postfix/main.cf 
+ADD ./root/etc/postfix/header_checks /etc/postfix/header_checks
+RUN postconf -e 'relayhost = [smtp.mailgun.org]:587'
+RUN postconf -e 'smtp_sasl_auth_enable = yes'
+
+
 # install php55
 ADD ./root/packages_php55.sh /packages_php55.sh
 RUN chmod 755 /packages_php55.sh
@@ -34,13 +46,12 @@ ADD ./root/docker-umask-wrapper.sh /bin/docker-umask-wrapper.sh
 
 RUN chmod u+x /bin/docker-umask-wrapper.sh
 
-
 RUN chmod 755 /*.sh
 RUN chmod 777 /var/lib/php/session
 
 # Add php user
 RUN usermod -g users apache
 
-EXPOSE 80
+EXPOSE 80 25
 
-CMD docker-umask-wrapper.sh /usr/sbin/httpd -DFOREGROUND
+CMD "postconf -e \"smtp_sasl_password_maps = static:$POSTFIX_USER:$POSTFIX_PWD\"; postconf -e \"myhostname = $POSTFIX_HOSTNAME\"; service postfix start; docker-umask-wrapper.sh /usr/sbin/httpd -DFOREGROUND"

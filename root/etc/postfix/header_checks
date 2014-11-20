@@ -1,0 +1,5 @@
+# MailGun Header - to prevent bouncebacks from reciever
+# where address verfification is enabled
+# and don't have access to mail server
+# Prepends header to ALL outgoing email with a From address
+/^From:/ PREPEND x-mailgun-native-send: true
