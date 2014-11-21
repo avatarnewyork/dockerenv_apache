@@ -209,7 +209,7 @@ mydestination = $myhostname, localhost.$mydomain, localhost
 # with 450 (try again later) until you are certain that your
 # local_recipient_maps settings are OK.
 #
-unknown_local_recipient_reject_code = 550
+#unknown_local_recipient_reject_code = 550
 
 # TRUST AND RELAY CONTROL
 
@@ -306,6 +306,7 @@ unknown_local_recipient_reject_code = 550
 #relayhost = [mailserver.isp.tld]
 #relayhost = uucphost
 #relayhost = [an.ip.add.ress]
+relayhost = [smtp.mailgun.org]:587
 
 # REJECTING UNKNOWN RELAY USERS
 #
@@ -666,12 +667,8 @@ sample_directory = /usr/share/doc/postfix-2.3.3/samples
 #
 readme_directory = /usr/share/doc/postfix-2.3.3/README_FILES
 
-smtp_sasl_security_options = noanonymous
-
-relayhost = [smtp.mailgun.org]:587
-
 smtp_sasl_auth_enable = yes
 
-#smtp_sasl_auth_enable = yes
-#smtp_sasl_password_maps = static:<%= relayuser %>:<%= relaypwd %>
-#smtp_sasl_security_options = noanonymous
+smtp_sasl_security_options = noanonymous
+
+unknown_local_recipient_reject_code = 550
