@@ -49,6 +49,6 @@ RUN chmod 777 /var/lib/php/session
 # Add php user
 RUN usermod -g users apache
 
-EXPOSE 80 25
+EXPOSE 80
 
 CMD postconf -e "test = test"; postconf -e "smtp_sasl_password_maps = static:$POSTFIX_USER:$POSTFIX_PWD"; postconf -e "myhostname = $POSTFIX_HOSTNAME"; service postfix start; /bin/docker-umask-wrapper.sh /usr/sbin/httpd -DFOREGROUND
