@@ -11,6 +11,9 @@ ADD ./root/packages.sh /packages.sh
 RUN chmod 755 /packages.sh
 RUN /packages.sh
 
+# set time to EST5EDT
+ln -sf /usr/share/zoneinfo/EST5EDT /etc/localtime
+
 # install postfix
 ADD ./root/packages_postfix.sh /packages_postfix.sh
 RUN chmod 755 /packages_postfix.sh
