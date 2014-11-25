@@ -9,11 +9,13 @@ ADD ./root/packages.sh /packages.sh
 RUN chmod 755 /packages.sh
 RUN /packages.sh
 
-
 # install php53
 ADD ./root/packages_php.sh /packages_php.sh
 RUN chmod 755 /packages_php.sh
 RUN /packages_php.sh
+
+# set time to EST5EDT
+RUN ln -sf /usr/share/zoneinfo/EST5EDT /etc/localtime
 
 # install postfix
 ADD ./root/packages_postfix.sh /packages_postfix.sh
