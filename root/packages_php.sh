@@ -48,3 +48,4 @@ pear install --alldeps Console_Table
 
 # Xdebug
 pecl install xdebug
+
