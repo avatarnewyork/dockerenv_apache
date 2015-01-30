@@ -29,3 +29,6 @@ yum -y install \
 pear channel-discover pear.drush.org
 pear install drush/drush
 pear install --alldeps Console_Table
+
+# Xdebug
+pecl install xdebug
