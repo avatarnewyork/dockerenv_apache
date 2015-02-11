@@ -20,7 +20,8 @@ yum -y install \
     php-pspell \
     php-snmp \
     php-xmlrpc \
-    php-xml       
+    php-xml \
+    pcre-devel
 
 # ImageMagick
 yum -y install \
