@@ -54,7 +54,7 @@ pecl install xdebug
 cd /usr/bin; php -r "readfile('https://getcomposer.org/installer');" | php
 
 # PHPUnit
-composer.phar global require "phpunit/phpunit=4.5.*"
+COMPOSER_HOME=/.composer composer.phar global require "phpunit/phpunit=4.5.*"
 
 # Selenium
-composer.phar global require "phpunit/phpunit-selenium": ">=1.2"
+COMPOSER_HOME=/.composer composer.phar global require "phpunit/phpunit-selenium": ">=1.2"
