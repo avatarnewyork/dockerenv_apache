@@ -86,6 +86,10 @@ class TestLogin extends PHPUnit_Extensions_Selenium2TestCase {
 }
 ```
 
+#### Example
+
+See: https://github.com/avatarnewyork/dockerenv_apache/wiki/phpunit_selenium_example
+
 ### External Commands
 * `phprun` (composer, etc) available in :latest, php53 - see dockerenv documentation
 * `drush` available in :latest, php53 - see dockerenv documentation

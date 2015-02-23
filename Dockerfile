@@ -53,7 +53,8 @@ RUN chmod 777 /var/lib/php/session
 RUN usermod -g users apache
 
 # Ensure composer is in our path
-ENV PATH /root/.composer/vendor/bin:$PATH
+ENV COMPOSER_HOME /
+ENV PATH /.composer/vendor/bin:$PATH
 
 EXPOSE 80
 
