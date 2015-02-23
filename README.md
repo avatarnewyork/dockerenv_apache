@@ -58,10 +58,38 @@ Now we need to configure path mappings for our remote server configuration.
 For more information refer to the PHPStorm docs on debugging:
 https://www.jetbrains.com/phpstorm/help/debugging-with-a-php-web-application-debug-configuration.html
 
+### PHPUnit + Selenium
+You can run phpunit tests by using the dockerenv `phpunit` wrapper command as follows:
+
+`phpunit [-hv] [-t <latest|php53|php51>] <PROJECT> [PARAMS]`
+
+* <PROJECT> is your project name
+* <PARAMS> the test file(s) you want to run
+
+#### Selenium Setup
+```php
+class TestLogin extends PHPUnit_Extensions_Selenium2TestCase {
+  public function setUp(){
+    // Selenium Host - always dev server ip or hostname
+    $this->setHost('10.2.0.10');
+	
+	// Selenium Port - this is static and is running in privleged mode (will always be 4444)
+    $this->setPort(4444);
+	
+	// Selenium Browser - *currently only supporting chrome
+    $this->setBrowser('chrome');
+	
+	// Selenium Test URL - this will be your dev URL, however the prefered method would be to provide getenv(IP:PORT) for portability.
+    // $this->setBrowserUrl('http://patsandbox.dev.avatarnewyork.com');
+	$this->setBrowserUrl(getenv("DB_1_PORT_3306_TCP_ADDR") . ':' . getenv("DB_1_PORT_3306_TCP_PORT"));
+	
+}
+```
 
 ### External Commands
 * `phprun` (composer, etc) available in :latest, php53 - see dockerenv documentation
 * `drush` available in :latest, php53 - see dockerenv documentation
+* `phpunit` available in :latest, php53 - see dockerenv documentation
 
 ## Misc Info
 * `nodejs less` available in :latest - https://github.com/avatarnewyork/dockerenv_apache/issues/6
