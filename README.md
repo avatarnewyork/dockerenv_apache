@@ -59,12 +59,13 @@ For more information refer to the PHPStorm docs on debugging:
 https://www.jetbrains.com/phpstorm/help/debugging-with-a-php-web-application-debug-configuration.html
 
 ### PHPUnit + Selenium
-You can run phpunit tests by using the dockerenv `phpunit` wrapper command as follows:
+phpunit is a dockerenv wrapper to phprun - You can run phpunit tests by using the dockerenv `phpunit` wrapper command as follows:
 
-`phpunit [-hv] [-t <latest|php53|php51>] <PROJECT> [PARAMS]`
+`phpunit [-hv] [-t <latest|php55beta|php53|php53beta|php51>] <PROJECT> [FILES]`
 
+* -t be sure to always include this unless you are using the latest tag default
 * <PROJECT> is your project name
-* <PARAMS> the test file(s) you want to run
+* <FILES> the test file(s) you want to run
 
 #### Selenium Setup
 ```php
@@ -79,9 +80,8 @@ class TestLogin extends PHPUnit_Extensions_Selenium2TestCase {
 	// Selenium Browser - *currently only supporting chrome
     $this->setBrowser('chrome');
 	
-	// Selenium Test URL - this will be your dev URL, however the prefered method would be to provide getenv(IP:PORT) for portability.
-    // $this->setBrowserUrl('http://patsandbox.dev.avatarnewyork.com');
-	$this->setBrowserUrl(getenv("DB_1_PORT_3306_TCP_ADDR") . ':' . getenv("DB_1_PORT_3306_TCP_PORT"));
+	// Selenium Test URL - this will be your dev URL - we should come up with a way to make this dynamic
+    $this->setBrowserUrl('http://patsandbox.dev.avatarnewyork.com');
 	
 }
 ```
