@@ -21,7 +21,8 @@ yum -y install \
     php-snmp \
     php-xmlrpc \
     php-xml \
-    pcre-devel
+    pcre-devel \
+    php-pecl-oauth 
 
 # ImageMagick
 yum -y install \
