@@ -23,7 +23,8 @@ yum -y install \
     php55w-xmlrpc \
     php55w-xml \
     php55w-process \
-    php55w-pecl-xdebug
+    php55w-pecl-xdebug \
+    php55w-devel
 
 # Drush
 pear channel-discover pear.drush.org
@@ -32,6 +33,10 @@ pear install --alldeps Console_Table
 
 # Xdebug
 pecl install xdebug
+
+# OAuth
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin; pecl install oauth
+echo 'extension=oauth.so' > /etc/php.d/oauth.ini
 
 # Composer
 cd /usr/bin; php -r "readfile('https://getcomposer.org/installer');" | php
