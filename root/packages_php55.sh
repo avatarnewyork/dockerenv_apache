@@ -46,3 +46,6 @@ COMPOSER_HOME=/.composer composer.phar global require "phpunit/phpunit=4.5.*"
 
 # Selenium
 COMPOSER_HOME=/.composer composer.phar global require "phpunit/phpunit-selenium": ">=1.2"
+
+# wp-cli - wordpress cli
+COMPOSER_HOME=/.composer composer.phar global require "wp-cli/wp-cli"
