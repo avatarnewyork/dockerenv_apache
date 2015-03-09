@@ -14,6 +14,11 @@ ADD ./root/packages_php.sh /packages_php.sh
 RUN chmod 755 /packages_php.sh
 RUN /packages_php.sh
 
+# install nodejs packages
+ADD ./root/packages_nodejs.sh /nodejs.sh
+RUN chmod 755 /nodejs.sh
+RUN /nodejs.sh
+
 # set time to EST5EDT
 RUN ln -sf /usr/share/zoneinfo/EST5EDT /etc/localtime
 
@@ -48,6 +53,10 @@ RUN chmod 777 /var/lib/php/session
 
 # Add php user
 RUN usermod -g users apache
+
+# Ensure composer is in our path
+ENV COMPOSER_HOME /
+ENV PATH /.composer/vendor/bin:$PATH
 
 EXPOSE 80
 

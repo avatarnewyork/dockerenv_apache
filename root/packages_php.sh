@@ -21,7 +21,8 @@ yum -y install \
     php-snmp \
     php-xmlrpc \
     php-xml \
-    pcre-devel
+    pcre-devel \
+    php-pecl-oauth 
 
 # ImageMagick
 yum -y install \
@@ -49,3 +50,15 @@ pear install --alldeps Console_Table
 
 # Xdebug
 pecl install xdebug
+
+# Composer
+cd /usr/bin; php -r "readfile('https://getcomposer.org/installer');" | php
+
+# PHPUnit
+COMPOSER_HOME=/.composer composer.phar global require "phpunit/phpunit=4.5.*"
+
+# Selenium
+COMPOSER_HOME=/.composer composer.phar global require "phpunit/phpunit-selenium": ">=1.2"
+
+# wp-cli - wordpress cli
+COMPOSER_HOME=/.composer composer.phar global require "wp-cli/wp-cli"
