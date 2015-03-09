@@ -96,7 +96,34 @@ See: https://github.com/avatarnewyork/dockerenv_apache/wiki/phpunit_selenium_exa
 * `drush` available in :latest, php53 - see dockerenv documentation
 * `phpunit` available in :latest, php53 - see dockerenv documentation
 
-## Misc Info
-* `nodejs less` available in :latest - https://github.com/avatarnewyork/dockerenv_apache/issues/6
-* `xdebug` available in :latest, php53: https://github.com/avatarnewyork/dockerenv_apache/issues/8
-* `email` available in :latest, php53.  Set environment variables above.  See https://github.com/avatarnewyork/dockerenv_apache/issues/10
+## Logs
+
+### Apache / PHP logs
+The container logs provide the following:
+* system logs
+* apache access logs
+* apache error logs
+* php error logs
+
+In order to veiw logs run:
+```bash
+docker logs [PROJETNAME]_[PROJECTNAME]_1
+```
+
+_*example:*_
+```bash
+docker logs patmohawkconnects_patmohawkconnects_1
+```
+
+
+## Installed Libraries
+
+Name        | :latest (php55) | :php53 | notes
+------------|-----------------|--------|--------
+nodejs less | x               | x      | https://github.com/avatarnewyork/dockerenv_apache/issues/6
+composer    | x               | x      | home is /.composer - https://getcomposer.org/
+grunt js    | x               | x      | http://gruntjs.com/
+wp-cli      | x               | x      | http://wp-cli.org/
+xdebug      | x               | x      | https://github.com/avatarnewyork/dockerenv_apache/issues/8
+email       | x               | x      | Set environment variables above.  See https://github.com/avatarnewyork/dockerenv_apache/issues/10
+oauth       | x               | x      | http://php.net/manual/en/book.oauth.php
