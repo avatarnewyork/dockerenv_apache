@@ -49,7 +49,7 @@ pear install drush/drush
 pear install --alldeps Console_Table
 
 # Xdebug
-pecl install xdebug
+yum -y install php-pecl-xdebug
 
 # Composer
 cd /usr/bin; php -r "readfile('https://getcomposer.org/installer');" | php
