@@ -33,7 +33,6 @@ echo "extension=ssh2.so" > /etc/php.d/ssh2.ini
 
 # ImageMagick
 yum -y install \
-    gcc \
     ImageMagick \
     ImageMagick-devel
 
