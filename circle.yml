@@ -1,0 +1,13 @@
+machine:
+  services:
+    - docker
+
+dependencies:
+  override:
+    - sudo pip install docker-compose
+    
+test:
+  override:
+    - docker-compose run -d --no-deps web
+    - docker run --rm --user=apache -i -t -w /var/www/ --volumes-from web_web_1 avatarnewyork/dockerenv-apache:php53 php -m
+
