@@ -2,3 +2,7 @@ web:
   build: .
   volumes:
     - "tests:/var/www/html"
+  ports:
+    - "8888:80"
+  environment:
+    POSTFIX_HOSTNAME: dev.avatarnewyork.com
