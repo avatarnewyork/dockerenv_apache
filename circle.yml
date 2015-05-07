@@ -1,6 +1,7 @@
 machine:
   services:
     - docker
+    - ruby
 
 dependencies:
   override:
@@ -9,4 +10,4 @@ dependencies:
 test:
   override:
     - docker-compose -f docker-compose.yml run web /.composer/vendor/phpunit/phpunit/phpunit  /var/www/html/
-
+    - rspec Dockerfile_spec.rb
