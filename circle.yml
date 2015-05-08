@@ -12,4 +12,10 @@ dependencies:
 test:
   override:
     - docker-compose -f docker-compose.yml run web /.composer/vendor/phpunit/phpunit/phpunit  /var/www/html/
-    - rspec Dockerfile_spec.rb
+#    - rspec Dockerfile_spec.rb
+
+deployment:
+  production:
+    branch: [master, php53, php53beta, php55beta]
+    commands:
+      - curl -H "Content-Type: application/json" --data '{"build": true}' -X POST $DOCKERHUB_TRIGGER_URL
