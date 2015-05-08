@@ -18,4 +18,4 @@ deployment:
   production:
     branch: [master, php53, php53beta, php55beta]
     commands:
-      - curl -H "Content-Type: application/json" --data '{"build": true}' -X POST $DOCKERHUB_TRIGGER_URL
+      - "curl -H \"Content-Type: application/json\" --data '{\"build\": true}' -X POST $DOCKERHUB_TRIGGER_URL"
