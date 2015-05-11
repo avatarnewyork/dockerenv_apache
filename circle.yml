@@ -13,6 +13,10 @@ test:
   override:
     - docker-compose -f docker-compose.yml run web /.composer/vendor/phpunit/phpunit/phpunit  /var/www/html/
     - rake spec
+  post:
+    - mkdir -p $CIRCLE_TEST_REPORTS/junit/
+    - find . -type f -regex "results.xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
+
 #    - docker-compose -f docker-compose.yml run web `cd /var/www/html; rake spec`
 #    - rspec Dockerfile_spec.rb
 
