@@ -17,11 +17,9 @@ test:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
     - find . -type f -name "results.xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
 
-#    - docker-compose -f docker-compose.yml run web `cd /var/www/html; rake spec`
-#    - rspec Dockerfile_spec.rb
-
 deployment:
   production:
-    branch: [master, php53, php53beta, php55beta, "circleci#44"]
+    branch: [master, php53, php53beta, php55beta]
     commands:
       - "curl -H \"Content-Type: application/json\" --data '{\"build\": true}' -X POST $DOCKERHUB_TRIGGER_URL"
+
