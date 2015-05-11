@@ -7,13 +7,13 @@ machine:
 dependencies:
   override:
     - sudo pip install --upgrade docker-compose
-#    - bundle install
+    - bundle install
 
 test:
   override:
     - docker-compose -f docker-compose.yml run web /.composer/vendor/phpunit/phpunit/phpunit  /var/www/html/
-    - docker-compose -f docker-compose.yml run web `cd /var/www/html; rake spec`
-#    - rspec Dockerfile_spec.rb
+#    - docker-compose -f docker-compose.yml run web `cd /var/www/html; rake spec`
+    - rspec Dockerfile_spec.rb
 
 deployment:
   production:

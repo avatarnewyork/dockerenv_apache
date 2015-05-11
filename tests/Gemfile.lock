@@ -28,12 +28,12 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.2.0)
     rspec-support (3.2.2)
-    serverspec (2.16.0)
+    serverspec (2.8.2)
       multi_json
       rspec (~> 3.0)
       rspec-its
-      specinfra (~> 2.31)
-    specinfra (2.31.0)
+      specinfra (~> 2.12)
+    specinfra (2.12.7)
       net-scp
       net-ssh
 
@@ -45,3 +45,4 @@ DEPENDENCIES
   rake
   rspec
   serverspec
+  specinfra (= 2.12.7)
