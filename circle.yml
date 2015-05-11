@@ -7,7 +7,7 @@ machine:
 dependencies:
   override:
     - sudo pip install --upgrade docker-compose
-    - bundle install
+#    - bundle install
 
 test:
   override:
