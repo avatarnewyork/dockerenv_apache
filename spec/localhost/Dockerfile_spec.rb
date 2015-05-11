@@ -3,10 +3,12 @@
 require "serverspec"
 require "docker"
 
-
-class Docker::Container
-  def remove(options={}); end
-  alias_method :delete, :remove
+# Workaround needed for circleCI
+if ENV['CIRCLECI']
+  class Docker::Container
+    def remove(options={}); end
+    alias_method :delete, :remove
+  end
 end
 
 describe "Dockerfile" do
