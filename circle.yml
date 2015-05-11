@@ -12,8 +12,9 @@ dependencies:
 test:
   override:
     - docker-compose -f docker-compose.yml run web /.composer/vendor/phpunit/phpunit/phpunit  /var/www/html/
+    - rake spec
 #    - docker-compose -f docker-compose.yml run web `cd /var/www/html; rake spec`
-    - rspec Dockerfile_spec.rb
+#    - rspec Dockerfile_spec.rb
 
 deployment:
   production:
