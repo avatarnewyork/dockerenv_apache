@@ -19,6 +19,11 @@ ADD ./root/packages_nodejs.sh /nodejs.sh
 RUN chmod 755 /nodejs.sh
 RUN /nodejs.sh
 
+# install ruby for testing serverspec
+ADD ./root/packages_ruby.sh /packages_ruby.sh
+RUN chmod 755 /packages_ruby.sh
+RUN /packages_ruby.sh
+
 # set time to EST5EDT
 RUN ln -sf /usr/share/zoneinfo/EST5EDT /etc/localtime
 
