@@ -1,13 +1,25 @@
 machine:
+  ruby:
+    version: rbx-2.2.6
   services:
     - docker
 
 dependencies:
   override:
-    - sudo pip install docker-compose
-    
+    - sudo pip install --upgrade docker-compose
+    - bundle install
+
 test:
   override:
-    - docker-compose run -d --no-deps web
-    - docker run --rm --user=apache -i -t -w /var/www/ --volumes-from web_web_1 avatarnewyork/dockerenv-apache:php53 php -m
+    - docker-compose -f docker-compose.yml run web /.composer/vendor/phpunit/phpunit/phpunit  /var/www/html/
+    - rake spec
+  post:
+    - mkdir -p $CIRCLE_TEST_REPORTS/junit/
+    - find . -type f -name "results.xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
+
+deployment:
+  production:
+    branch: [master, php53, php53beta, php55beta]
+    commands:
+      - "curl -H \"Content-Type: application/json\" --data '{\"build\": true}' -X POST $DOCKERHUB_TRIGGER_URL"
 
