@@ -26,6 +26,32 @@ yum -y install \
     php55w-pecl-xdebug \
     php55w-devel
 
+# ImageMagick
+yum -y install \
+    gcc \
+    ImageMagick \
+    ImageMagick-devel
+
+/usr/bin/pecl install imagick
+
+echo "extension=imagick.so" > /etc/php.d/imagick.ini
+
+
+# Solr
+yum -y install \
+    curl-devel \
+    libxml2-devel
+
+yes '' | pecl install -f solr
+
+echo "extension=solr.so" > /etc/php.d/solr.ini
+
+
+# ssh / sftp
+yum -y install libssh2-devel
+printf "\n" | pecl install -f ssh2
+echo "extension=ssh2.so" > /etc/php.d/ssh2.ini
+
 # Drush
 pear channel-discover pear.drush.org
 pear install drush/drush
