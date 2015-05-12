@@ -1,4 +1,4 @@
-#/bin/bash
+#!/bin/bash
 
 yum -y install \
     php \
@@ -24,9 +24,15 @@ yum -y install \
     pcre-devel \
     php-pecl-oauth 
 
+# ssh / sftp
+yum -y install libssh2-devel
+
+printf "\n" | pecl install -f ssh2
+
+echo "extension=ssh2.so" > /etc/php.d/ssh2.ini
+
 # ImageMagick
 yum -y install \
-    gcc \
     ImageMagick \
     ImageMagick-devel
 

@@ -7,7 +7,8 @@ openssh-server \
 openssh-clients \
 passwd \
 pwgen \
-httpd 
+httpd \
+gcc
 
 # drush requirements
 yum -y install \
