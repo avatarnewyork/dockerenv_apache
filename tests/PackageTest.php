@@ -4,6 +4,8 @@ class PackageTest extends PHPUnit_Framework_TestCase
 
   public function testPearPackagesInstalled()
   {
+
+    error_reporting(E_ALL & ~E_STRICT & ~E_DEPRECATED);
     include 'PEAR/Registry.php';
 
     $reg = new PEAR_Registry;
