@@ -28,6 +28,11 @@ POSTFIX_USER: [user]
 POSTFIX_PWD: [password]
 ```
 
+#### Email - Logs
+You can check the status of the mail that was sent using loggly.  Search for the respective environment and include appropriate date/times:
+* _*mailgun stage.avatarnewyork.com*_
+* _*mailgun dev.avatarnewyork.com*_
+
 ### XDEBUG
 In your docker [PROJECTNAME].yml file that you created for your project make sure you have the:
 XDEBUG_CLIENT_IP: 10.2.0.51 <= replace with your desktop IP
