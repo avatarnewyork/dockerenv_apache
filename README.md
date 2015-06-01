@@ -132,3 +132,4 @@ wp-cli      | x               | x      | http://wp-cli.org/
 xdebug      | x               | x      | https://github.com/avatarnewyork/dockerenv_apache/issues/8
 email       | x               | x      | Set environment variables above.  See https://github.com/avatarnewyork/dockerenv_apache/issues/10
 oauth       | x               | x      | http://php.net/manual/en/book.oauth.php
+ssh2        | x               | x      | http://php.net/manual/en/book.ssh2.php
