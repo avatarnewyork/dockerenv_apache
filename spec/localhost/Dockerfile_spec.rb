@@ -32,8 +32,8 @@ describe "Dockerfile" do
 
   describe 'Apache Install' do
     describe command('apachectl -M') do
-      its(:stdout) { should contain('rewrite_module') }
-      its(:stdout) { should contain('php5_module') }
+      its(:stdout) { should include('rewrite_module') }
+      its(:stdout) { should include('php5_module') }
     end
     
     describe command('apachectl -V') do
@@ -43,7 +43,7 @@ describe "Dockerfile" do
       # test 'conf/httpd.conf' exists after "SERVER_CONFIG_FILE".
       its(:stdout) { should contain('conf/httpd.conf').after('SERVER_CONFIG_FILE') }
       
-      # test 'Apache/2.2.29' exists before "Server built".
+      # test 'Apache/2.2.15' exists before "Server built".
       its(:stdout) { should contain(' Apache/2.2.15').before('Server built') }
     end
   end
