@@ -38,13 +38,13 @@ describe "Dockerfile" do
     
     describe command('apachectl -V') do
       # test 'Prefork' exists between "Server MPM" and "Server compiled".
-      its(:stdout) { should contain('Prefork').from(/^Server MPM/).to(/^Server compiled/) }
+      its(:stdout) { should include('Prefork') }
       
       # test 'conf/httpd.conf' exists after "SERVER_CONFIG_FILE".
-      its(:stdout) { should contain('conf/httpd.conf').after('SERVER_CONFIG_FILE') }
+      its(:stdout) { should include('conf/httpd.conf') }
       
       # test 'Apache/2.2.15' exists before "Server built".
-      its(:stdout) { should contain(' Apache/2.2.15').before('Server built') }
+      its(:stdout) { should include(' Apache/2.2.15') }
     end
   end
 
