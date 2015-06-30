@@ -13,6 +13,18 @@ test:
   override:
     - docker-compose -f docker-compose.yml run web /.composer/vendor/phpunit/phpunit/phpunit  /var/www/html/
     - rake spec
+    # ngrock /ghostinspector reql request 
+    - wget https://dl.ngrok.com/ngrok_2.0.17_linux_amd64.zip
+    - unzip ngrok_2.0.17_linux_amd64.zip
+    - ./ngrok authtoken $NGROK_TOKEN
+    - ./ngrok http -subdomain=$CIRCLE_SHA1 8888:
+        background: true
+    # Wait for application and ngrok to be ready
+    - curl --retry 10 --retry-delay 10 -v https://$CIRCLE_SHA1.ngrok.io
+    # Execute Ghost Inspector tests using the ngrok tunnel
+    - curl "https://api.ghostinspector.com/v1/suites/$GHOST_SUITE_ID/execute/?apiKey=$GHOST_API_KEY&startUrl=https://$CIRCLE_SHA1.ngrok.io" > $CIRCLE_ARTIFACTS/ghostinspector.json
+    - if [ $(grep -c '"passing":false' $CIRCLE_ARTIFACTS/ghostinspector.json) -ne 0 ]; then exit 1; fi
+
   post:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/
     - find . -type f -name "results.xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
