@@ -12,8 +12,11 @@ dependencies:
 test:
   override:
     - docker-compose -f docker-compose.yml run web /.composer/vendor/phpunit/phpunit/phpunit  /var/www/html/
-    - rake spec
-    # ngrock /ghostinspector reql request 
+    - rake spec:
+        timeout: 720
+    # start apache in background
+    - docker-compose -f docker-compose.yml up -d
+    # ngrock /ghostinspector real request 
     - wget https://dl.ngrok.com/ngrok_2.0.17_linux_amd64.zip
     - unzip ngrok_2.0.17_linux_amd64.zip
     - ./ngrok authtoken $NGROK_TOKEN
