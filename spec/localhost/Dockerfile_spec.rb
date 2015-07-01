@@ -81,7 +81,7 @@ describe "Dockerfile" do
 
   describe 'Misc installed packages' do
     describe command('which drush') do
-      its(:stdout) { should include("/usr/bin/drush") }
+      its(:stdout) { should match "/usr/bin/drush" }
     end
     describe command('which composer.phar') do
       its(:stdout) { should match "/usr/bin/composer.phar" }
