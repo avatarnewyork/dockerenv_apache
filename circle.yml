@@ -12,9 +12,9 @@ dependencies:
 test:
   override:
     - docker-compose -f docker-compose.yml run web /.composer/vendor/phpunit/phpunit/phpunit  /var/www/html/:
-        timeout: 780
+        timeout: 1200
     - rake spec:
-        timeout: 780
+        timeout: 1200
     # start apache in background
     - docker-compose -f docker-compose.yml up -d
     # ngrock /ghostinspector real request 
