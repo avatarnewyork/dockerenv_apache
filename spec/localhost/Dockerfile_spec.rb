@@ -27,7 +27,7 @@ describe "Dockerfile" do
   it "installs required packages" do
     expect(package("httpd")).to be_installed
     expect(package("npm")).to be_installed
-    expect(package("php")).to be_installed
+    expect(package("php55w")).to be_installed
   end
 
   describe 'Apache Install' do
