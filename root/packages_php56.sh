@@ -1,30 +1,30 @@
 #/bin/bash
 
 yum -y install \
-    php55w \
-    php55w-common \
-    php55w-cli \
-    php55w-ldap \
-    php55w-mbstring \
-    php55w-pdo \
-    php55w-soap \
-    php55w-bcmath \
-    php55w-intl \
-    php55w-pear \
-    php55w-mcrypt \
-    php55w-opcache \
-    php55w-mysql \
-    php55w-devel \
-    php55w-gd \
-    php55w-pecl-memcache \
-    php55w-pecl-imagick \
-    php55w-pspell \
-    php55w-snmp \
-    php55w-xmlrpc \
-    php55w-xml \
-    php55w-process \
-    php55w-pecl-xdebug \
-    php55w-devel
+    php56w \
+    php56w-common \
+    php56w-cli \
+    php56w-ldap \
+    php56w-mbstring \
+    php56w-pdo \
+    php56w-soap \
+    php56w-bcmath \
+    php56w-intl \
+    php56w-pear \
+    php56w-mcrypt \
+    php56w-opcache \
+    php56w-mysql \
+    php56w-devel \
+    php56w-gd \
+    php56w-pecl-memcache \
+    php56w-pecl-imagick \
+    php56w-pspell \
+    php56w-snmp \
+    php56w-xmlrpc \
+    php56w-xml \
+    php56w-process \
+    php56w-pecl-xdebug \
+    php56w-devel
 
 # ImageMagick
 yum -y install \
