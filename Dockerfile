@@ -22,6 +22,9 @@ ADD ./root/etc/php.ini /etc/php.ini
 ADD ./root/etc/httpd/robots.txt /etc/httpd/robots.txt
 RUN mkdir /etc/httpd/vhosts.d
 
+# ZendOptimizer		
+Add ./root/ZendOptimizer.so /usr/lib64/php/modules/ZendOptimizer.so
+
 RUN chmod 755 /*.sh
 RUN chmod 777 /var/lib/php/session
 
