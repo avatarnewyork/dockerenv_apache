@@ -11,7 +11,6 @@ yum --exclude=php53\* -y install \
     php-common \
     php-intl \
     php-pear \
-    php-pecl-apc \
     php-mcrypt \
     php-mysql \
     php-devel \
