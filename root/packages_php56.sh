@@ -1,5 +1,12 @@
 #/bin/bash
 
+# ImageMagick
+yum -y install \
+    gcc \
+    ImageMagick \
+    ImageMagick-devel
+
+
 yum -y install \
     php56w \
     php56w-common \
@@ -26,13 +33,6 @@ yum -y install \
     php56w-pecl-xdebug \
     php56w-devel
 
-# ImageMagick
-yum -y install \
-    gcc \
-    ImageMagick \
-    ImageMagick-devel
-
-/usr/bin/pecl install imagick
 
 echo "extension=imagick.so" > /etc/php.d/imagick.ini
 
@@ -53,12 +53,9 @@ printf "\n" | pecl install -f ssh2
 echo "extension=ssh2.so" > /etc/php.d/ssh2.ini
 
 # Drush
-pear channel-discover pear.drush.org
-pear install drush/drush
-pear install --alldeps Console_Table
+wget -O /usr/bin/drush http://files.drush.org/drush.phar; chmod 755 /usr/bin/drush
 
 # Xdebug
-pecl install xdebug
 
 # OAuth
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin; pecl install oauth
