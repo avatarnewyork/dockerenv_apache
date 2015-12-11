@@ -13,9 +13,9 @@ class PackageTest extends PHPUnit_Framework_TestCase
 
     $packages = $reg->listPackages();
 
-    $this->assertContains('console_table', $packages);
+    //$this->assertContains('console_table', $packages);
     $this->assertContains('archive_tar', $packages);
-    $this->assertContains('console_getopt', $packages);
+    //$this->assertContains('console_getopt', $packages);
     $this->assertContains('xml_util', $packages);
     $this->assertContains('pear', $packages);
   }

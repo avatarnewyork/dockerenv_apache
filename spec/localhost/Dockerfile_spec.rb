@@ -21,7 +21,7 @@ describe "Dockerfile" do
   end
 
   it "installs the right version of Centos" do
-    expect(os_version).to include("CentOS release 6.6")
+    expect(os_version).to include("CentOS release 6.7")
   end
 
   it "installs required packages" do
