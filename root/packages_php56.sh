@@ -24,6 +24,7 @@ yum -y install \
     php56w-devel \
     php56w-gd \
     php56w-pecl-memcache \
+    php56w-pecl-memcached \
     php56w-pecl-imagick \
     php56w-pspell \
     php56w-snmp \

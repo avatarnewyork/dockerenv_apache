@@ -28,6 +28,9 @@ describe "Dockerfile" do
     expect(package("httpd")).to be_installed
     expect(package("npm")).to be_installed
     expect(package("php56w")).to be_installed
+    expect(package("php56w-pecl-memcache")).to be_installed
+    expect(package("php56w-pecl-memcached")).to be_installed
+    expect(package("php56w-pecl-imagick")).to be_installed
   end
 
   describe 'Apache Install' do
