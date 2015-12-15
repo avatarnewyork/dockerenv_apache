@@ -17,9 +17,8 @@ test:
         timeout: 1200
     # start apache in background
     - docker-compose -f docker-compose.yml up -d
-    # ngrock /ghostinspector real request 
-    - wget https://dl.ngrok.com/ngrok_2.0.17_linux_amd64.zip
-    - unzip ngrok_2.0.17_linux_amd64.zip
+    # ngrock /ghostinspector real request
+    - unzip -d ~/ ~/$CIRCLE_PROJECT_REPONAME/ngrok_2.0.19_linux_amd64.zip
     - ./ngrok authtoken $NGROK_TOKEN
     - ./ngrok http -subdomain=$CIRCLE_SHA1 8888:
         background: true
