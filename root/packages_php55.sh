@@ -17,6 +17,7 @@ yum -y install \
     php55w-devel \
     php55w-gd \
     php55w-pecl-memcache \
+    php55w-pecl-memcached \
     php55w-pecl-imagick \
     php55w-pspell \
     php55w-snmp \
@@ -53,12 +54,9 @@ printf "\n" | pecl install -f ssh2
 echo "extension=ssh2.so" > /etc/php.d/ssh2.ini
 
 # Drush
-pear channel-discover pear.drush.org
-pear install drush/drush
-pear install --alldeps Console_Table
+wget -O /usr/bin/drush http://files.drush.org/drush.phar; chmod 755 /usr/bin/drush
 
 # Xdebug
-pecl install xdebug
 
 # OAuth
 PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin; pecl install oauth
