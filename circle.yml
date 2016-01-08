@@ -34,7 +34,7 @@ test:
 
 deployment:
   production:
-    branch: [master, php53, php53beta, php55beta]
+    branch: [php55beta]
     commands:
       - ./deploy.sh
 
