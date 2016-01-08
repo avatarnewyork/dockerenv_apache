@@ -2,7 +2,8 @@ FROM centos:centos6
 #MAINTAINER Ushio Shugo <ushio.s@gmail.com>
 
 # using epel
-RUN rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+#RUN rpm -Uvh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-latest.noarch.rpm
+RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 RUN rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm 
 RUN rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm
 Run yum -y update
