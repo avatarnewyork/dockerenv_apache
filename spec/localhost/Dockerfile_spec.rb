@@ -20,14 +20,9 @@ describe "Dockerfile" do
     set :docker_image, image.id
   end
 
-  it "installs the right version of Centos" do
-    expect(os_version).to include("CentOS release 6.7")
-  end
-
   it "installs required packages" do
     expect(package("httpd")).to be_installed
     expect(package("npm")).to be_installed
-    expect(package("php56w")).to be_installed
     expect(package("php56w-pecl-memcache")).to be_installed
     expect(package("php56w-pecl-memcached")).to be_installed
     expect(package("php56w-pecl-imagick")).to be_installed
@@ -91,7 +86,4 @@ describe "Dockerfile" do
     end
   end
   
-  def os_version
-    command("/bin/cat /etc/redhat-release").stdout
-  end
 end
