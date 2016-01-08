@@ -16,7 +16,7 @@ test:
     - bash:
         parallel: true
         files:
-          - ~/$CIRCLE_PROJECT_REPONAME/testrunners/*.sh
+          - testrunners/*.sh
         timeout: 1200
 
   post:
