@@ -17,7 +17,7 @@ test:
         timeout: 1200
     # start apache in background
     - docker-compose -f docker-compose.yml up -d
-    # ngrock /ghostinspector real request 
+    # ngrock /ghostinspector real request
     - unzip -d ~/ ~/$CIRCLE_PROJECT_REPONAME/ngrok_2.0.19_linux_amd64.zip
     - ~/ngrok authtoken $NGROK_TOKEN
     - ~/ngrok http -subdomain=$CIRCLE_SHA1 8888:
@@ -33,8 +33,28 @@ test:
     - find . -type f -name "results.xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
 
 deployment:
-  production:
-    branch: [master, php53, php53beta, php55beta, php56, php56beta]
+  php55beta:
+    branch: [php55beta]
+    commands:
+      - ./deploy.sh
+  master:
+    branch: [master]
+    commands:
+      - ./deploy.sh
+  php56beta:
+    branch: [php56beta]
+    commands:
+      - ./deploy.sh
+  php56:
+    branch: [php56]
+    commands:
+      - ./deploy.sh
+  php53beta:
+    branch: [php53beta]
+    commands:
+      - ./deploy.sh
+  php53:
+    branch: [php53]
     commands:
       - ./deploy.sh
 

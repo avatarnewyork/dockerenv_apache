@@ -35,41 +35,36 @@ yum -y install \
     php56w-devel
 
 
-echo "extension=imagick.so" > /etc/php.d/imagick.ini
-
-
 # Solr
 yum -y install \
     curl-devel \
     libxml2-devel
 
-yes '' | pecl install -f solr
+yes '' | pecl install -f solr-2.3.0
 
 echo "extension=solr.so" > /etc/php.d/solr.ini
 
 
 # ssh / sftp
 yum -y install libssh2-devel
-printf "\n" | pecl install -f ssh2
+printf "\n" | pecl install -f ssh2-0.12
 echo "extension=ssh2.so" > /etc/php.d/ssh2.ini
 
 # Drush
 wget -O /usr/bin/drush http://files.drush.org/drush.phar; chmod 755 /usr/bin/drush
 
-# Xdebug
-
 # OAuth
-PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin; pecl install oauth
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin; pecl install oauth-1.2.3
 echo 'extension=oauth.so' > /etc/php.d/oauth.ini
 
 # Composer
-cd /usr/bin; php -r "readfile('https://getcomposer.org/installer');" | php
+cd /usr/bin; /usr/bin/php -dzend_extension=xdebug.so -r "readfile('https://getcomposer.org/installer');" | php
 
 # PHPUnit
-COMPOSER_HOME=/.composer composer.phar global require "phpunit/phpunit=4.5.*"
+COMPOSER_HOME=/.composer /usr/bin/php -dzend_extension=xdebug.so composer.phar global require "phpunit/phpunit=4.5.*"
 
 # Selenium
-COMPOSER_HOME=/.composer composer.phar global require "phpunit/phpunit-selenium": ">=1.2"
+COMPOSER_HOME=/.composer /usr/bin/php -dzend_extension=xdebug.so composer.phar global require "phpunit/phpunit-selenium": ">=1.2"
 
 # wp-cli - wordpress cli
-COMPOSER_HOME=/.composer composer.phar global require "wp-cli/wp-cli"
+COMPOSER_HOME=/.composer /usr/bin/php -dzend_extension=xdebug.so composer.phar global require "wp-cli/wp-cli=0.21.1"
