@@ -1,6 +1,6 @@
 machine:
   ruby:
-    version: rbx-2.2.9
+    version: rbx-2.2.10
   services:
     - docker
 
