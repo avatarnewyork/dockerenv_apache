@@ -24,28 +24,7 @@ test:
     - find . -type f -name "results.xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
 
 deployment:
-  php55beta:
-    branch: [php55beta]
+  ${CIRCLE_BRANCH}:
+    branch: [${CIRCLE_BRANCH}]
     commands:
       - ./deploy.sh
-  master:
-    branch: [master]
-    commands:
-      - ./deploy.sh
-  php56beta:
-    branch: [php56beta]
-    commands:
-      - ./deploy.sh
-  php56:
-    branch: [php56]
-    commands:
-      - ./deploy.sh
-  php53beta:
-    branch: [php53beta]
-    commands:
-      - ./deploy.sh
-  php53:
-    branch: [php53]
-    commands:
-      - ./deploy.sh
-
