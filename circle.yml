@@ -24,7 +24,7 @@ test:
     - find . -type f -name "results.xml" -exec cp {} $CIRCLE_TEST_REPORTS/junit/ \;
 
 deployment:
-  ${CIRCLE_BRANCH}:
-    branch: [${CIRCLE_BRANCH}]
+  $CIRCLE_BRANCH:
+    branch: [$CIRCLE_BRANCH]
     commands:
       - ./deploy.sh
