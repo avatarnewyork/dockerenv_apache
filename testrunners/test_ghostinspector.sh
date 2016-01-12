@@ -5,9 +5,8 @@ docker-compose -f docker-compose.yml up -d
 
 ~/ngrok authtoken $NGROK_TOKEN
 
-~/ngrok http -subdomain=$CIRCLE_SHA1 8888:
-  background: true
-
+~/ngrok http -log=stdout -subdomain=$CIRCLE_SHA1 8888 > /dev/null &
+  
 # Wait for application and ngrok to be ready
 curl --retry 10 --retry-delay 10 -v https://$CIRCLE_SHA1.ngrok.io
 
