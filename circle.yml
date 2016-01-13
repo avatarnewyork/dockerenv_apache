@@ -12,15 +12,15 @@ dependencies:
     - unzip -d ~/ ~/$CIRCLE_PROJECT_REPONAME/ngrok_2.0.19_linux_amd64.zip
   post:
     # remove any cached files - cache seems to cause issues
-    - rm -r ~/.gradle
-    - rm -r ~/.bundle
-    - rm -r ~/.cache/bower
-    - rm -r ~/.go_workspace
-    - rm -r ~/.ivy2
-    - rm -r ~/.m2
-    - rm -r ~/dockerenv_apache/vendor/bundle
-    - rm -r ~/virtualenvs
-    - rm -r ~/dockerenv_apache/.git
+    - rm -rf ~/.gradle
+    - rm -rf ~/.bundle
+    - rm -rf ~/.cache/bower
+    - rm -rf ~/.go_workspace
+    - rm -rf ~/.ivy2
+    - rm -rf ~/.m2
+    - rm -rf ~/dockerenv_apache/vendor/bundle
+    - rm -rf ~/virtualenvs
+    - rm -rf ~/dockerenv_apache/.git
 test:
   override:
     - bash:
