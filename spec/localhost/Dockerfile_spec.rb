@@ -23,9 +23,6 @@ describe "Dockerfile" do
   it "installs required packages" do
     expect(package("httpd")).to be_installed
     expect(package("npm")).to be_installed
-    expect(package("php56w-pecl-memcache")).to be_installed
-    expect(package("php56w-pecl-memcached")).to be_installed
-    expect(package("php56w-pecl-imagick")).to be_installed
   end
 
   describe 'Apache Install' do
@@ -79,9 +76,6 @@ describe "Dockerfile" do
 
   describe 'Misc installed executables' do
     describe file("/usr/bin/drush") do
-      it { should be_executable }
-    end
-    describe file("/usr/bin/composer.phar") do
       it { should be_executable }
     end
     describe file("/usr/bin/composer.phar") do
