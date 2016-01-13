@@ -77,12 +77,18 @@ describe "Dockerfile" do
     end
   end
 
-  describe 'Misc installed packages' do
-    describe command('which drush') do
-      its(:stdout) { should match "/usr/bin/drush" }
+  describe 'Misc installed executables' do
+    describe file("/usr/bin/drush") do
+      it { should be_executable }
     end
-    describe command('which composer.phar') do
-      its(:stdout) { should match "/usr/bin/composer.phar" }
+    describe file("/usr/bin/composer.phar") do
+      it { should be_executable }
+    end
+    describe file("/usr/bin/composer.phar") do
+      it { should be_executable }
+    end
+    describe file("/usr/bin/unzip") do
+      it { should be_executable }
     end
   end
   
