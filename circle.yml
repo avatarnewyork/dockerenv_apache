@@ -1,6 +1,6 @@
 machine:
   ruby:
-    version: rbx-2.2.6
+    version: rbx-2.2.10
   services:
     - docker
 
@@ -8,25 +8,25 @@ dependencies:
   override:
     - sudo pip install --upgrade docker-compose==1.2.0
     - bundle install
-
-test:
-  override:
-    - docker-compose -f docker-compose.yml run web /.composer/vendor/phpunit/phpunit/phpunit  /var/www/html/:
-        timeout: 1200
-    - rake spec:
-        timeout: 1200
-    # start apache in background
-    - docker-compose -f docker-compose.yml up -d
     # ngrock /ghostinspector real request
     - unzip -d ~/ ~/$CIRCLE_PROJECT_REPONAME/ngrok_2.0.19_linux_amd64.zip
-    - ~/ngrok authtoken $NGROK_TOKEN
-    - ~/ngrok http -subdomain=$CIRCLE_SHA1 8888:
-        background: true
-    # Wait for application and ngrok to be ready
-    - curl --retry 10 --retry-delay 10 -v https://$CIRCLE_SHA1.ngrok.io
-    # Execute Ghost Inspector tests using the ngrok tunnel
-    - curl "https://api.ghostinspector.com/v1/suites/$GHOST_SUITE_ID/execute/?apiKey=$GHOST_API_KEY&startUrl=https://$CIRCLE_SHA1.ngrok.io" > $CIRCLE_ARTIFACTS/ghostinspector.json
-    - if [ $(grep -c '"passing":false' $CIRCLE_ARTIFACTS/ghostinspector.json) -ne 0 ]; then exit 1; fi
+  post:
+    # remove any cached files - cache seems to cause issues
+    - rm -rf ~/.gradle
+    - rm -rf ~/.bundle
+    - rm -rf ~/.cache/bower
+    - rm -rf ~/.go_workspace
+    - rm -rf ~/.ivy2
+    - rm -rf ~/.m2
+    - rm -rf ~/dockerenv_apache/vendor/bundle
+    - rm -rf ~/virtualenvs
+test:
+  override:
+    - bash:
+        parallel: true
+        files:
+          - testrunners/*.sh
+        timeout: 1200
 
   post:
     - mkdir -p $CIRCLE_TEST_REPORTS/junit/

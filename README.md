@@ -19,6 +19,11 @@ sandboxproject:
     POSTFIX_PWD: somesecretpassword
     XDEBUG_CLIENT_IP: 10.2.0.51
 ```
+
+### Available Tags / Versions
+* For a list of supported PHP versions, go here: https://registry.hub.docker.com/u/avatarnewyork/dockerenv-apache/tags/manage/
+* Anything appended with "beta" should be considered unstable and is bleeding edge
+
 ## Environment Varaibles
 ### Email - mailgun
 Ask your admin for these (different for staging / dev environments)
