@@ -20,14 +20,9 @@ describe "Dockerfile" do
     set :docker_image, image.id
   end
 
-  it "installs the right version of Centos" do
-    expect(os_version).to include("CentOS release 6.6")
-  end
-
   it "installs required packages" do
     expect(package("httpd")).to be_installed
     expect(package("npm")).to be_installed
-    expect(package("php")).to be_installed
   end
 
   describe 'Apache Install' do
@@ -79,16 +74,16 @@ describe "Dockerfile" do
     end
   end
 
-  describe 'Misc installed packages' do
-    describe command('which drush') do
-      its(:stdout) { should match "/usr/bin/drush" }
+  describe 'Misc installed executables' do
+    describe file("/usr/bin/drush") do
+      it { should be_executable }
     end
-    describe command('which composer.phar') do
-      its(:stdout) { should match "/usr/bin/composer.phar" }
+    describe file("/usr/bin/composer.phar") do
+      it { should be_executable }
+    end
+    describe file("/usr/bin/unzip") do
+      it { should be_executable }
     end
   end
   
-  def os_version
-    command("/bin/cat /etc/redhat-release").stdout
-  end
 end
