@@ -18,7 +18,7 @@ yum -y install \
     php-gd \
     php-pecl-memcache \
     php-pecl-memcached \
-    php55w-pecl-imagick \
+    php-pecl-imagick \
     php-pspell \
     php-snmp \
     php-xmlrpc \
