@@ -24,9 +24,9 @@ yum -y install \
     php-xmlrpc \
     php-xml \
     pcre-devel \
-    php-pecl-oauth
+    php-pecl-oauth \
     php-process \
-    php-pecl-xdebug \
+    php-pecl-xdebug 
 
 
 # ssh / sftp
