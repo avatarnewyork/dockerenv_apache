@@ -1,3 +1,4 @@
+[![Stories in Ready](https://badge.waffle.io/avatarnewyork/dockerenv_apache.png?label=ready&title=Ready)](https://waffle.io/avatarnewyork/dockerenv_apache)
 dockerenv_apache
 ================
 
@@ -18,6 +19,11 @@ sandboxproject:
     POSTFIX_PWD: somesecretpassword
     XDEBUG_CLIENT_IP: 10.2.0.51
 ```
+
+### Available Tags / Versions
+* For a list of supported PHP versions, go here: https://registry.hub.docker.com/u/avatarnewyork/dockerenv-apache/tags/manage/
+* Anything appended with "beta" should be considered unstable and is bleeding edge
+
 ## Environment Varaibles
 ### Email - mailgun
 Ask your admin for these (different for staging / dev environments)
@@ -26,6 +32,11 @@ POSTFIX_HOSTNAME: [hostname]
 POSTFIX_USER: [user]
 POSTFIX_PWD: [password]
 ```
+
+#### Email - Logs
+You can check the status of the mail that was sent using loggly.  Search for the respective environment and include appropriate date/times:
+* _*mailgun stage.avatarnewyork.com*_
+* _*mailgun dev.avatarnewyork.com*_
 
 ### XDEBUG
 In your docker [PROJECTNAME].yml file that you created for your project make sure you have the:
@@ -95,7 +106,35 @@ See: https://github.com/avatarnewyork/dockerenv_apache/wiki/phpunit_selenium_exa
 * `drush` available in :latest, php53 - see dockerenv documentation
 * `phpunit` available in :latest, php53 - see dockerenv documentation
 
-## Misc Info
-* `nodejs less` available in :latest - https://github.com/avatarnewyork/dockerenv_apache/issues/6
-* `xdebug` available in :latest, php53: https://github.com/avatarnewyork/dockerenv_apache/issues/8
-* `email` available in :latest, php53.  Set environment variables above.  See https://github.com/avatarnewyork/dockerenv_apache/issues/10
+## Logs
+
+### Apache / PHP logs
+The container logs provide the following:
+* system logs
+* apache access logs
+* apache error logs
+* php error logs
+
+In order to veiw logs run:
+```bash
+docker logs [PROJETNAME]_[PROJECTNAME]_1
+```
+
+_*example:*_
+```bash
+docker logs patmohawkconnects_patmohawkconnects_1
+```
+
+
+## Installed Libraries
+
+Name        | :latest (php55) | :php53 | notes
+------------|-----------------|--------|--------
+nodejs less | x               | x      | https://github.com/avatarnewyork/dockerenv_apache/issues/6
+composer    | x               | x      | home is /.composer - https://getcomposer.org/
+grunt js    | x               | x      | http://gruntjs.com/
+wp-cli      | x               | x      | http://wp-cli.org/
+xdebug      | x               | x      | https://github.com/avatarnewyork/dockerenv_apache/issues/8
+email       | x               | x      | Set environment variables above.  See https://github.com/avatarnewyork/dockerenv_apache/issues/10
+oauth       | x               | x      | http://php.net/manual/en/book.oauth.php
+ssh2        | x               | x      | http://php.net/manual/en/book.ssh2.php
