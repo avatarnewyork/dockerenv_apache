@@ -49,7 +49,8 @@ echo "extension=solr.so" > /etc/php.d/solr.ini
 cd /usr/bin; /usr/bin/php -dzend_extension=xdebug.so -r "readfile('https://getcomposer.org/installer');" | php
 
 # Drush
-COMPOSER_HOME=/.composer /usr/bin/php -dzend_extension=xdebug.so composer.phar global require drush/drush:6.5.0
+COMPOSER_HOME=/.composer /usr/bin/php -dzend_extension=xdebug.so composer.phar global require --prefer-source "drush/drush:6.5.0"
+ln -s /.composer/vendor/bin/drush /usr/bin/drush
 
 # PHPUnit
 COMPOSER_HOME=/.composer /usr/bin/php -dzend_extension=xdebug.so composer.phar global require --prefer-source "phpunit/phpunit=4.5.*"
