@@ -9,7 +9,8 @@ yum -y install \
     pwgen \
     httpd \
     unzip \
-    gcc
+    gcc \
+    mysql55w
 
 # drush requirements
 yum -y install \
