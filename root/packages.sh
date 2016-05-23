@@ -12,9 +12,13 @@ yum -y install \
     gcc \
     mysql55w
 
+yum clean all
+
 # drush requirements
 yum -y install \
     wget \
     which \
     tar 
+
+yum clean all
 

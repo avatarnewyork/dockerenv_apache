@@ -6,6 +6,7 @@ yum -y install \
     ImageMagick \
     ImageMagick-devel
 
+yum clean all
 
 yum -y install \
     php56w \
@@ -34,11 +35,14 @@ yum -y install \
     php56w-pecl-xdebug \
     php56w-devel
 
+yum clean all
 
 # Solr
 yum -y install \
     curl-devel \
     libxml2-devel
+
+yum clean all
 
 yes '' | pecl install -f solr-2.3.0
 
@@ -47,6 +51,7 @@ echo "extension=solr.so" > /etc/php.d/solr.ini
 
 # ssh / sftp
 yum -y install libssh2-devel
+yum clean all
 printf "\n" | pecl install -f ssh2-0.12
 echo "extension=ssh2.so" > /etc/php.d/ssh2.ini
 
