@@ -1,10 +1,10 @@
-FROM centos:centos6
+FROM centos:centos7
 #MAINTAINER Ushio Shugo <ushio.s@gmail.com>
 
 # using epel
-RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
-RUN rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm 
-RUN rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm
+RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm
+RUN rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-7.rpm 
+RUN rpm -Uvh https://mirror.webtatic.com/yum/el7/webtatic-release.rpm
 Run yum -y update
 
 # add composer lock file (prevent github timeouts)
