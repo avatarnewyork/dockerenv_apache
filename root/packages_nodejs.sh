@@ -1,5 +1,5 @@
 # install nodejs
-yum -y install npm
+yum -y install npm; yum clean all
 
 # install node modules (globally)
 npm install -g uglify-js@2.3.6
