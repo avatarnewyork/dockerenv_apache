@@ -10,6 +10,7 @@ yum -y install \
     httpd \
     unzip \
     gcc \
+    make \
     mysql55w
 
 yum clean all
