@@ -21,7 +21,7 @@ yum -y install \
     php56w-pear \
     php56w-mcrypt \
     php56w-opcache \
-    php56w-mysql \
+    php56w-mysqlnd
     php56w-devel \
     php56w-gd \
     php56w-pecl-memcache \
@@ -34,11 +34,6 @@ yum -y install \
     php56w-process \
     php56w-pecl-xdebug \
     php56w-devel
-
-yum clean all
-
-# workaround: http://serverfault.com/questions/588078/processing-conflict-mysql55w-libs-5-5-36-3-w6-x86-64-conflicts-mysql-libs-5-5
-yum -y replace mysql-libs --replace-with mysql55w-libs
 
 yum clean all
 
