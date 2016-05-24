@@ -37,6 +37,11 @@ yum -y install \
 
 yum clean all
 
+# workaround: http://serverfault.com/questions/588078/processing-conflict-mysql55w-libs-5-5-36-3-w6-x86-64-conflicts-mysql-libs-5-5
+yum -y replace mysql-libs --replace-with mysql55w-libs
+
+yum clean all
+
 # Solr
 yum -y install \
     curl-devel \
