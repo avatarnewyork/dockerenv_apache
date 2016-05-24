@@ -23,7 +23,6 @@ yum -y install \
     php56w-opcache \
     php56w-mysqlnd
     php56w-devel \
-    php56w-gd \
     php56w-pecl-memcache \
     php56w-pecl-memcached \
     php56w-pecl-imagick \
@@ -73,3 +72,6 @@ COMPOSER_HOME=/.composer /usr/bin/php -dzend_extension=xdebug.so composer.phar g
 
 # wp-cli - wordpress cli
 COMPOSER_HOME=/.composer /usr/bin/php -dzend_extension=xdebug.so composer.phar global require --prefer-source "wp-cli/wp-cli=0.21.1"
+
+# GD lib last
+yum install php56w-gd libXpm t1lib; yum clean all
