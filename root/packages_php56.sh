@@ -73,3 +73,6 @@ COMPOSER_HOME=/.composer /usr/bin/php -dzend_extension=xdebug.so composer.phar g
 
 # wp-cli - wordpress cli
 COMPOSER_HOME=/.composer /usr/bin/php -dzend_extension=xdebug.so composer.phar global require --prefer-source "wp-cli/wp-cli=0.21.1"
+
+# drupal console - https://drupalconsole.com/
+cd /usr/local/bin; curl https://drupalconsole.com/installer -L -o drupal; chmod +x /usr/local/bin/drupal
