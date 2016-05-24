@@ -50,6 +50,7 @@ ADD ./root/docker-umask-wrapper.sh /bin/docker-umask-wrapper.sh
 RUN chmod u+x /bin/docker-umask-wrapper.sh
 
 RUN chmod 755 /*.sh
+RUN mkdir -p /var/lib/php/session
 RUN chmod 777 /var/lib/php/session
 
 # Add php user

@@ -74,4 +74,6 @@ COMPOSER_HOME=/.composer /usr/bin/php -dzend_extension=xdebug.so composer.phar g
 COMPOSER_HOME=/.composer /usr/bin/php -dzend_extension=xdebug.so composer.phar global require --prefer-source "wp-cli/wp-cli=0.21.1"
 
 # GD lib last
-yum install php56w-gd libXpm t1lib; yum clean all
+yum -y install php56w-gd libXpm t1lib
+
+yum clean all
