@@ -9,11 +9,18 @@ yum -y install \
     pwgen \
     httpd \
     unzip \
-    gcc
+    gcc \
+    make \
+    yum-plugin-replace \
+    mysql55w
+
+yum clean all
 
 # drush requirements
 yum -y install \
     wget \
     which \
     tar 
+
+yum clean all
 

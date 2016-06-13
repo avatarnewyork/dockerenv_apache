@@ -6,3 +6,4 @@ yum -y install --disablerepo=webtatic \
     cyrus-sasl-plain \
     mailx
 
+yum clean all

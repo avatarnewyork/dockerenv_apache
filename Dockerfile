@@ -5,7 +5,7 @@ FROM centos:centos6
 RUN rpm -Uvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm
 RUN rpm -Uvh http://rpms.famillecollet.com/enterprise/remi-release-6.rpm 
 RUN rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm
-Run yum -y update
+Run yum -y update; yum clean all
 
 # add composer lock file (prevent github timeouts)
 ADD ./root/composer.lock /.composer/composer.lock
@@ -50,6 +50,7 @@ ADD ./root/docker-umask-wrapper.sh /bin/docker-umask-wrapper.sh
 RUN chmod u+x /bin/docker-umask-wrapper.sh
 
 RUN chmod 755 /*.sh
+RUN mkdir -p /var/lib/php/session
 RUN chmod 777 /var/lib/php/session
 
 # Add php user

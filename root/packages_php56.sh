@@ -6,12 +6,14 @@ yum -y install \
     ImageMagick \
     ImageMagick-devel
 
+yum clean all
 
 yum -y install \
     php56w \
     php56w-common \
     php56w-cli \
     php56w-ldap \
+    php56w-gd \
     php56w-mbstring \
     php56w-pdo \
     php56w-soap \
@@ -20,9 +22,8 @@ yum -y install \
     php56w-pear \
     php56w-mcrypt \
     php56w-opcache \
-    php56w-mysql \
+    php56w-mysqlnd \
     php56w-devel \
-    php56w-gd \
     php56w-pecl-memcache \
     php56w-pecl-memcached \
     php56w-pecl-imagick \
@@ -34,11 +35,14 @@ yum -y install \
     php56w-pecl-xdebug \
     php56w-devel
 
+yum clean all
 
 # Solr
 yum -y install \
     curl-devel \
     libxml2-devel
+
+yum clean all
 
 yes '' | pecl install -f solr-2.3.0
 
@@ -47,6 +51,7 @@ echo "extension=solr.so" > /etc/php.d/solr.ini
 
 # ssh / sftp
 yum -y install libssh2-devel
+yum clean all
 printf "\n" | pecl install -f ssh2-0.12
 echo "extension=ssh2.so" > /etc/php.d/ssh2.ini
 
@@ -68,3 +73,6 @@ COMPOSER_HOME=/.composer /usr/bin/php -dzend_extension=xdebug.so composer.phar g
 
 # wp-cli - wordpress cli
 COMPOSER_HOME=/.composer /usr/bin/php -dzend_extension=xdebug.so composer.phar global require --prefer-source "wp-cli/wp-cli=0.21.1"
+
+# drupal console - https://drupalconsole.com/
+cd /usr/local/bin; curl https://drupalconsole.com/installer -L -o drupal; chmod +x /usr/local/bin/drupal; drupal init --override
