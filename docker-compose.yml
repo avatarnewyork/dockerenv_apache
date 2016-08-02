@@ -6,3 +6,6 @@ web:
     - "8888:80"
   environment:
     POSTFIX_HOSTNAME: dev.avatarnewyork.com
+    container: docker
+  privileged: true
+  
