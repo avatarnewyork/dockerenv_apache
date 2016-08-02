@@ -8,8 +8,6 @@ class ExtensionTest extends PHPUnit_Framework_TestCase
     // extras
     $this->assertEquals(true, extension_loaded('imagick'));
     $this->assertEquals(true, extension_loaded('ssh2'));
-    $this->assertEquals(true, extension_loaded('memcache'));
-    $this->assertEquals(true, extension_loaded('memcached'));
     $this->assertEquals(true, extension_loaded('solr'));
     $this->assertEquals(true, extension_loaded('xdebug'));
     $this->assertEquals(true, extension_loaded('curl'));
