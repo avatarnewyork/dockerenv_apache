@@ -28,7 +28,7 @@ describe "Dockerfile" do
   describe 'Apache Install' do
     describe command('apachectl -M') do
       its(:stdout) { should include('rewrite_module') }
-      its(:stdout) { should include('php5_module') }
+      its(:stdout) { should include('php7_module') }
     end
     
     describe command('apachectl -V') do

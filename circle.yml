@@ -58,4 +58,8 @@ deployment:
     branch: [php53]
     commands:
       - ./deploy.sh
+  php7:
+    branch: [php7]
+    commands:
+      - ./deploy.sh
 
