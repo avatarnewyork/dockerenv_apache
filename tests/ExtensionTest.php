@@ -21,7 +21,6 @@ class ExtensionTest extends PHPUnit_Framework_TestCase
     $this->assertEquals(true, extension_loaded('ctype'));
     $this->assertEquals(true, extension_loaded('date'));
     $this->assertEquals(true, extension_loaded('dom'));
-    $this->assertEquals(true, extension_loaded('ereg'));
     $this->assertEquals(true, extension_loaded('exif'));
     $this->assertEquals(true, extension_loaded('fileinfo'));
     $this->assertEquals(true, extension_loaded('ftp'));
