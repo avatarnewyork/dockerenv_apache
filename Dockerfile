@@ -27,7 +27,7 @@ ADD ./root/etc/postfix/main.cf /etc/postfix/main.cf
 ADD ./root/etc/postfix/header_checks /etc/postfix/header_checks
 
 # install php56
-ADD ./root/packages_php56.sh /packages_php7.sh
+ADD ./root/packages_php7.sh /packages_php7.sh
 RUN chmod 755 /packages_php7.sh
 RUN /packages_php7.sh
 
