@@ -29,14 +29,16 @@ class ExtensionTest extends PHPUnit_Framework_TestCase
     $this->assertEquals(true, extension_loaded('gmp'));
     $this->assertEquals(true, extension_loaded('hash'));
     $this->assertEquals(true, extension_loaded('iconv'));
+    $this->assertEquals(true, extension_loaded('imagick'));
     $this->assertEquals(true, extension_loaded('intl'));
     $this->assertEquals(true, extension_loaded('json'));
     $this->assertEquals(true, extension_loaded('ldap'));
     $this->assertEquals(true, extension_loaded('libxml'));
     $this->assertEquals(true, extension_loaded('mbstring'));
     $this->assertEquals(true, extension_loaded('mcrypt'));
-    $this->assertEquals(true, extension_loaded('mysql'));
     $this->assertEquals(true, extension_loaded('mysqli'));
+    $this->assertEquals(true, extension_loaded('mysqlnd'));
+    $this->assertEquals(true, extension_loaded('OAuth'));
     $this->assertEquals(true, extension_loaded('openssl'));
     $this->assertEquals(true, extension_loaded('pcntl'));
     $this->assertEquals(true, extension_loaded('pcre'));
@@ -53,8 +55,10 @@ class ExtensionTest extends PHPUnit_Framework_TestCase
     $this->assertEquals(true, extension_loaded('snmp'));
     $this->assertEquals(true, extension_loaded('soap'));
     $this->assertEquals(true, extension_loaded('sockets'));
+    $this->assertEquals(true, extension_loaded('solr'));
     $this->assertEquals(true, extension_loaded('SPL'));
     $this->assertEquals(true, extension_loaded('sqlite3'));
+    $this->assertEquals(true, extension_loaded('ssh2'));
     $this->assertEquals(true, extension_loaded('standard'));
     $this->assertEquals(true, extension_loaded('tokenizer'));
     $this->assertEquals(true, extension_loaded('wddx'));

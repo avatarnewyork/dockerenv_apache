@@ -21,7 +21,6 @@ describe "Dockerfile" do
   end
 
   it "installs required packages" do
-    expect(package("httpd")).to be_installed
     expect(package("npm")).to be_installed
   end
 
