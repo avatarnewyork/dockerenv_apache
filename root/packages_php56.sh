@@ -72,7 +72,7 @@ COMPOSER_HOME=/.composer /usr/bin/php -dzend_extension=xdebug.so composer.phar g
 COMPOSER_HOME=/.composer /usr/bin/php -dzend_extension=xdebug.so composer.phar global require --prefer-source "phpunit/phpunit-selenium": ">=1.2"
 
 # wp-cli - wordpress cli
-COMPOSER_HOME=/.composer /usr/bin/php -dzend_extension=xdebug.so composer.phar global require --prefer-source "wp-cli/wp-cli=0.23.1"
+COMPOSER_HOME=/.composer /usr/bin/php -dzend_extension=xdebug.so composer.phar global require --prefer-source "wp-cli/wp-cli=0.24.1"
 
 # drupal console - https://drupalconsole.com/
 cd /usr/local/bin; curl https://drupalconsole.com/installer -L -o drupal; chmod +x /usr/local/bin/drupal; drupal init --override
