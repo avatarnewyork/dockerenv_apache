@@ -8,7 +8,7 @@ RUN rpm -Uvh http://mirror.webtatic.com/yum/el6/latest.rpm
 Run yum -y update; yum clean all
 
 # add composer lock file (prevent github timeouts)
-ADD ./root/composer.lock /.composer/composer.lock
+#ADD ./root/composer.lock /.composer/composer.lock
 
 ADD ./root/packages.sh /packages.sh
 RUN chmod 755 /packages.sh
