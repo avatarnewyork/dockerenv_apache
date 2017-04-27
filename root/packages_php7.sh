@@ -27,6 +27,7 @@ yum -y install \
     php70w-pecl-memcache \
     php70w-pecl-memcached \
     php70w-pecl-imagick \
+    php70w-phpdbg \
     php70w-pspell \
     php70w-snmp \
     php70w-xmlrpc \
