@@ -8,3 +8,5 @@ yum -y install --disablerepo=webtatic \
 
 yum clean all
 
+mkfifo /var/spool/postfix/public/pickup
+
