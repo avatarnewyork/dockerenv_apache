@@ -9,33 +9,33 @@ yum -y install \
 yum clean all
 
 yum -y install \
-    php70w \
-    php70w-common \
-    php70w-cli \
-    php70w-ldap \
-    php70w-mbstring \
-    php70w-pdo \
-    php70w-soap \
-    php70w-bcmath \
-    php70w-intl \
-    php70w-pear \
-    php70w-mcrypt \
-    php70w-opcache \
-    php70w-mysqlnd \
-    php70w-devel \
-    php70w-gd \
-    php70w-pecl-memcache \
-    php70w-pecl-memcached \
-    php70w-pecl-imagick \
-    php70w-phpdbg \
-    php70w-pspell \
-    php70w-snmp \
-    php70w-xmlrpc \
-    php70w-xml \
-    php70w-process \
-    php70w-pecl-xdebug \
-    php70w-devel \
-    php70w-phpdbg
+    php71w \
+    php71w-common \
+    php71w-cli \
+    php71w-ldap \
+    php71w-mbstring \
+    php71w-pdo \
+    php71w-soap \
+    php71w-bcmath \
+    php71w-intl \
+    php71w-pear \
+    php71w-mcrypt \
+    php71w-opcache \
+    php71w-mysqlnd \
+    php71w-devel \
+    php71w-gd \
+    php71w-pecl-memcache \
+    php71w-pecl-memcached \
+    php71w-pecl-imagick \
+    php71w-phpdbg \
+    php71w-pspell \
+    php71w-snmp \
+    php71w-xmlrpc \
+    php71w-xml \
+    php71w-process \
+    php71w-pecl-xdebug \
+    php71w-devel \
+    php71w-phpdbg
 
 yum clean all
 
