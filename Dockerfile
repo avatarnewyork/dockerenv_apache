@@ -32,9 +32,10 @@ RUN chmod 755 /packages_php7.sh
 RUN /packages_php7.sh
 
 # install nodejs packages
-ADD ./root/packages_nodejs.sh /nodejs.sh
-RUN chmod 755 /nodejs.sh
-RUN /nodejs.sh
+# 2017-08-16 - TMP removed due to package issue: https://bugzilla.redhat.com/show_bug.cgi?id=1481470
+#ADD ./root/packages_nodejs.sh /nodejs.sh
+#RUN chmod 755 /nodejs.sh
+#RUN /nodejs.sh
 
 RUN echo "NETWORKING=yes" > /etc/sysconfig/network
 
