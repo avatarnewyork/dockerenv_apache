@@ -72,13 +72,13 @@ PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin:/root/bin; pec
 echo 'extension=oauth.so' > /etc/php.d/oauth.ini
 
 # Composer
-cd /usr/bin; /usr/bin/php -dzend_extension=xdebug.so -r "readfile('https://getcomposer.org/installer');" | php
+cd /usr/bin; /usr/bin/php -r "readfile('https://getcomposer.org/installer');" | php
 
 # PHPUnit
-COMPOSER_HOME=/.composer /usr/bin/php -dzend_extension=xdebug.so composer.phar global require --prefer-source "phpunit/phpunit=4.5.*"
+COMPOSER_HOME=/.composer /usr/bin/php composer.phar global require --prefer-source "phpunit/phpunit=4.5.*"
 
 # Selenium
-COMPOSER_HOME=/.composer /usr/bin/php -dzend_extension=xdebug.so composer.phar global require --prefer-source "phpunit/phpunit-selenium": ">=1.2"
+COMPOSER_HOME=/.composer /usr/bin/php composer.phar global require --prefer-source "phpunit/phpunit-selenium": ">=1.2"
 
 # wp-cli - wordpress cli
-COMPOSER_HOME=/.composer /usr/bin/php -dzend_extension=xdebug.so composer.phar global require --prefer-source "wp-cli/wp-cli=0.21.1"
+COMPOSER_HOME=/.composer /usr/bin/php composer.phar global require --prefer-source "wp-cli/wp-cli=0.21.1"
