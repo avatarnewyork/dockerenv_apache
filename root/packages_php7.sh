@@ -51,7 +51,7 @@ yes '' | pecl install -f solr-2.4.0
 echo "extension=solr.so" > /etc/php.d/solr.ini
 
 # Stats
-yes '' | pecl install -f stats-1.0.5
+yes '' | pecl install -f stats-2.0.3
 echo "extension=stats.so" > /etc/php.d/stats.ini
 
 
