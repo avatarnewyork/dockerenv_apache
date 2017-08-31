@@ -12,7 +12,7 @@ yum -y install \
     gcc \
     make \
     yum-plugin-replace \
-    mysql55w
+    mysql
 
 yum clean all
 
