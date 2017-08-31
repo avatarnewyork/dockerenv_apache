@@ -12,6 +12,7 @@ class ExtensionTest extends PHPUnit_Framework_TestCase
     $this->assertEquals(true, extension_loaded('xdebug'));
     $this->assertEquals(true, extension_loaded('curl'));
     $this->assertEquals(true, extension_loaded('OAuth'));
+    $this->assertEquals(true, extension_loaded('stats'));
 
     // standard
     $this->assertEquals(true, extension_loaded('bcmath'));
@@ -69,7 +70,7 @@ class ExtensionTest extends PHPUnit_Framework_TestCase
     $this->assertEquals(true, extension_loaded('xsl'));
     $this->assertEquals(true, extension_loaded('zip'));
     $this->assertEquals(true, extension_loaded('zlib'));
-
+    $this->assertEquals(true, extension_loaded('zlib'));
   }
 }
 
