@@ -1,5 +1,5 @@
 # tmp fix for: https://bugzilla.redhat.com/show_bug.cgi?id=1481470
-rpm -i http://springdale.math.ias.edu/data/puias/unsupported/7/x86_64/http-parser-2.7.1-3.sdl7.x86_64.rpm
+#rpm -i http://springdale.math.ias.edu/data/puias/unsupported/7/x86_64/http-parser-2.7.1-3.sdl7.x86_64.rpm
 
 # install nodejs
 yum -y install npm; yum clean all
