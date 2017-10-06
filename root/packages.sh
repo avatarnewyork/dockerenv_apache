@@ -11,8 +11,7 @@ yum -y install \
     unzip \
     gcc \
     make \
-    yum-plugin-replace \
-    mysql55w
+    yum-plugin-replace
 
 yum clean all
 

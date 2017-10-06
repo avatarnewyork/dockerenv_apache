@@ -63,4 +63,8 @@ deployment:
     branch: [php7]
     commands:
       - ./deploy.sh
-
+  php71:
+    branch: [php71]
+    commands:
+      - ./deploy.sh
+      
