@@ -26,16 +26,19 @@ RUN /packages_postfix.sh
 ADD ./root/etc/postfix/main.cf /etc/postfix/main.cf 
 ADD ./root/etc/postfix/header_checks /etc/postfix/header_checks
 
-# install php56
+# install php71
 ADD ./root/packages_php7.sh /packages_php7.sh
 RUN chmod 755 /packages_php7.sh
 RUN /packages_php7.sh
 
+# install mysql to handle drush issues
+RUN yum -y install mysql && yum clean all
+
 # install nodejs packages
 # 2017-08-16 - TMP removed due to package issue: https://bugzilla.redhat.com/show_bug.cgi?id=1481470
-#ADD ./root/packages_nodejs.sh /nodejs.sh
-#RUN chmod 755 /nodejs.sh
-#RUN /nodejs.sh
+ADD ./root/packages_nodejs.sh /nodejs.sh
+RUN chmod 755 /nodejs.sh
+RUN yum-config-manager --enable cr; /nodejs.sh; yum-config-manager --disable cr
 
 RUN echo "NETWORKING=yes" > /etc/sysconfig/network
 
