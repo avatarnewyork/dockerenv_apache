@@ -13,6 +13,7 @@ class ExtensionTest extends PHPUnit_Framework_TestCase
     $this->assertEquals(true, extension_loaded('curl'));
     $this->assertEquals(true, extension_loaded('OAuth'));
     $this->assertEquals(true, extension_loaded('stats'));
+    $this->assertEquals(true, extension_loaded('redis'));
 
     // standard
     $this->assertEquals(true, extension_loaded('bcmath'));
