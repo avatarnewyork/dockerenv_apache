@@ -35,7 +35,8 @@ yum -y install \
     php70w-process \
     php70w-pecl-xdebug \
     php70w-devel \
-    php70w-phpdbg
+    php70w-phpdbg \
+    php70w-pecl-redis 
 
 yum clean all
 
